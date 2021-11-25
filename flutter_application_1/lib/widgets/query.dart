@@ -13,7 +13,7 @@ class Query extends StatelessWidget {
           child: TextField(
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              hintText: 'Enter your Query',
+              hintText: 'Enter your Query/Complaint',
             ),
           ),
         ),
