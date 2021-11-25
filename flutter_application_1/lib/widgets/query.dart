@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyCustomForm extends StatelessWidget {
-  const MyCustomForm({Key? key}) : super(key: key);
+class Query extends StatelessWidget {
+  const Query({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
