@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/loginPortal.dart';
 import 'package:flutter_application_1/Screens/loginPortal2.dart';
-
-
 import 'Screens/homepage1.dart';
 
 void main() {
