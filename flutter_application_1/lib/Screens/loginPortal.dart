@@ -8,7 +8,7 @@ class TRIAL extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.deepOrange[900],
         title: Row(
           children: [
             Padding(
@@ -22,9 +22,9 @@ class TRIAL extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "Hulery",
+                "Welcome to HAMS!",
                 style: TextStyle(
-                    color: Colors.yellow,
+                    color: Colors.white,
                     fontSize: 25,
                     fontWeight: FontWeight.w600,
                     fontStyle: FontStyle.italic),
