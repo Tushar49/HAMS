@@ -16,7 +16,8 @@ class loginPage extends StatelessWidget {
               child: CircleAvatar(
                 radius: 25,
                 backgroundColor: Colors.white,
-                foregroundImage: NetworkImage('https://media.istockphoto.com/vectors/hostel-building-flat-illustration-vector-id519665036'),
+                foregroundImage: NetworkImage(
+                    'https://media.istockphoto.com/vectors/hostel-building-flat-illustration-vector-id519665036'),
               ),
             ),
             Padding(
@@ -52,39 +53,31 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Expanded(
-          flex: 1,
-          child: Container(
-              color: Colors.lightBlue[10],
-              child: Column(children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Opacity(
-                        opacity: 0.4,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 200.0),
-                          child: Image.asset('bg.jpeg'),
-                        )),
-                    Text("I\'m Tushy\nA Guy in Black",
-                        style: TextStyle(
-                          fontSize: 40.0,
-                          color: Colors.blueGrey,
-                          fontWeight: FontWeight.bold,
-                        )),
-                  ],
-                )
-              ])),
-        ),
-        Expanded(
-            flex: 1,
-            child: Container(
-              color: Colors.red,
-            ))
-      ],
-    );
+    return Container(
+        color: Colors.lightBlue[10],
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 100.0), 
+            child: Column(children: [
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  // Opacity(
+                  //     opacity: 0.4,
+                  //     child: Padding(
+                  //       padding: const EdgeInsets.only(top: 200.0),
+                  //       child: Image.asset('bg.jpeg'),
+                  // )),
+                  Text("Login Portal",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      )),
+                ],
+              )
+            ]),
+          ),
+        ));
   }
 }

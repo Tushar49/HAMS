@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Hum aapke hai kon?',
+      title: 'Hostel Asset Management',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
