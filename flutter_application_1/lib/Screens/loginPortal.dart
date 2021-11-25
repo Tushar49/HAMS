@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/widgets/contactButton.dart';
 
-class TRIAL extends StatelessWidget {
-  const TRIAL({Key? key}) : super(key: key);
+class loginPage extends StatelessWidget {
+  const loginPage({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -34,7 +34,7 @@ class TRIAL extends StatelessWidget {
         ),
         actions: [
           contactButton(
-            bText: 'Contact Me',
+            bText: 'Contact Us',
             icon: Icon(Icons.send_sharp),
             onPressed: () {},
           )
@@ -58,7 +58,7 @@ class Body extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Container(
-              color: Colors.black,
+              color: Colors.lightBlue[10],
               child: Column(children: [
                 Stack(
                   alignment: Alignment.center,
