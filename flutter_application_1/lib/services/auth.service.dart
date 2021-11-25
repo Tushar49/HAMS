@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 class AuthService {
   // Login
   Future<bool> login(String email, String password)async {
-    String url = 'https://hamsid.000webhostapp.com/login.php';
+    String url = 'https://hamsystem.000webhostapp.com/login.php';
     print(url);
   
 
