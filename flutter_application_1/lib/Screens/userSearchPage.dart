@@ -1,3 +1,4 @@
+import 'package:flappy_search_bar/flappy_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/widgets/contactButton.dart';
@@ -70,6 +71,21 @@ class Body extends StatelessWidget {
               Stack(
                 alignment: Alignment.center,
                 children: [
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 15),
+                    child: TextFormField(
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
+                        labelText: 'Enter the Serial Number',
+                      ),
+                    ),
+                  ),
+                  // SearchBar(
+                  //     hintText: "Enter the Serial Number",
+                  //     hintStyle: TextStyle(
+                  //       color: Colors.grey[100],
+                  //     ))
                   // Opacity(
                   //     opacity: 0.4,
                   //     child: Padding(
