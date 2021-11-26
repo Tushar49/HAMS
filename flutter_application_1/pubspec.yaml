@@ -37,6 +37,7 @@ dependencies:
   http: ^0.13.4
   ftpclient: ^0.8.0
   ftpconnect: ^1.0.0
+  flappy_search_bar: ^1.7.2
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/widgets/contactButton.dart';
 
 class TRIAL extends StatelessWidget {
@@ -65,27 +66,34 @@ class Body extends StatelessWidget {
                 Stack(
                   alignment: Alignment.center,
                   children: [
-                    Opacity(
-                        opacity: 0.4,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 200.0),
-                          child: Image.asset('bg.jpeg'),
-                        )),
-                    Text("I\'m Tushy\nA Guy in Black",
-                        style: TextStyle(
-                          fontSize: 40.0,
-                          color: Colors.blueGrey,
-                          fontWeight: FontWeight.bold,
-                        )),
+                    new FlatButton(
+                        child: new Text('Logout'),
+                        onPressed: () {
+                          appAuth.logout().then((_) => Navigator.of(context)
+                              .pushReplacementNamed('/login'));
+                        })
+
+                    // Opacity(
+                    //     opacity: 0.4,
+                    //     child: Padding(
+                    //       padding: const EdgeInsets.only(top: 200.0),
+                    //       child: Image.asset('bg.jpeg'),
+                    //     )),
+                    //   Text("I\'m Tushy\nA Guy in Black",
+                    //       style: TextStyle(
+                    //         fontSize: 40.0,
+                    //         color: Colors.blueGrey,
+                    //         fontWeight: FontWeight.bold,
+                    //       )),
                   ],
                 )
               ])),
         ),
-        Expanded(
-            flex: 1,
-            child: Container(
-              color: Colors.red,
-            ))
+        // Expanded(
+        //     flex: 1,
+        //     child: Container(
+        //       color: Colors.red,
+        //     ))
       ],
     );
   }
