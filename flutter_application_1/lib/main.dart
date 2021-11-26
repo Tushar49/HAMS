@@ -3,6 +3,8 @@ import 'package:flutter_application_1/pages/login.page.dart';
 import 'package:flutter_application_1/services/auth.service.dart';
 import 'package:flutter/material.dart';
 
+import 'Screens/loginPortal.dart';
+
 AuthService appAuth = new AuthService();
 
 void main() async {
@@ -15,7 +17,7 @@ void main() async {
     home: _defaultHome,
     routes: <String, WidgetBuilder>{
       // Set routes for using the Navigator.
-      '/home': (BuildContext context) => new HomePage(),
+      '/home': (BuildContext context) => new TRIAL(),
       '/login': (BuildContext context) => new LoginPage()
     },
   ));
