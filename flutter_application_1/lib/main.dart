@@ -2,6 +2,9 @@ import 'package:flutter_application_1/pages/home.page.dart';
 import 'package:flutter_application_1/pages/login.page.dart';
 import 'package:flutter_application_1/services/auth.service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/loginPortal.dart';
+import 'package:flutter_application_1/Screens/loginPortal2.dart';
+import 'Screens/homepage1.dart';
 
 import 'Screens/loginPortal.dart';
 
