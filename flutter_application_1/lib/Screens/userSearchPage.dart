@@ -4,8 +4,8 @@ import 'package:flutter_application_1/widgets/contactButton.dart';
 
 import '../main.dart';
 
-class loginPage extends StatelessWidget {
-  const loginPage({Key? key}) : super(key: key);
+class searchPage extends StatelessWidget {
+  const searchPage({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -32,10 +32,16 @@ class loginPage extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     fontStyle: FontStyle.italic),
               ),
-            )
+            ),
           ],
         ),
         actions: [
+          new FlatButton(
+              child: new Text('Logout'),
+              onPressed: () {
+                appAuth.logout().then((_) =>
+                    Navigator.of(context).pushReplacementNamed('/login'));
+              }),
           contactButton(
             bText: 'Contact Us',
             icon: Icon(Icons.send_sharp),
@@ -70,21 +76,12 @@ class Body extends StatelessWidget {
                   //       padding: const EdgeInsets.only(top: 200.0),
                   //       child: Image.asset('bg.jpeg'),
                   // )),
-                  Text("Login Portal",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 158.0),
-                    child: new FlatButton(
-                        child: new Text('Logout'),
-                        onPressed: () {
-                          appAuth.logout().then((_) => Navigator.of(context)
-                              .pushReplacementNamed('/login'));
-                        }),
-                  )
+                  // Text("",
+                  //     style: TextStyle(
+                  //       fontSize: 20.0,
+                  //       color: Colors.black,
+                  //       fontWeight: FontWeight.bold,
+                  //     )),
                 ],
               )
             ]),

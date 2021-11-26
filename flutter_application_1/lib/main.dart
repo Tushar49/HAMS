@@ -7,6 +7,7 @@ import 'package:flutter_application_1/Screens/loginPortal2.dart';
 import 'Screens/homepage1.dart';
 
 import 'Screens/loginPortal.dart';
+import 'Screens/userSearchPage.dart';
 
 AuthService appAuth = new AuthService();
 
@@ -16,11 +17,11 @@ void main() async {
 
   // Run app!
   runApp(new MaterialApp(
-    title: 'App',
+    title: 'Hostel Asset Management System',
     home: _defaultHome,
     routes: <String, WidgetBuilder>{
       // Set routes for using the Navigator.
-      '/home': (BuildContext context) => new TRIAL(),
+      '/home': (BuildContext context) => new searchPage(),
       '/login': (BuildContext context) => new LoginPage()
     },
   ));
