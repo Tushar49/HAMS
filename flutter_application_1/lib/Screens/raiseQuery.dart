@@ -4,8 +4,8 @@ import 'package:flutter_application_1/widgets/contactButton.dart';
 
 import '../main.dart';
 
-class itemInfo extends StatelessWidget {
-  const itemInfo({Key? key}) : super(key: key);
+class raiseQuery extends StatelessWidget {
+  const raiseQuery({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -25,7 +25,7 @@ class itemInfo extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "Product Information",
+                "Query Form",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 25,
@@ -56,10 +56,10 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.lightBlue[100],
+        color: Colors.lightBlue[10],
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 100.0),
             child: Column(children: [
               Stack(
                 alignment: Alignment.center,
@@ -70,34 +70,20 @@ class Body extends StatelessWidget {
                   //       padding: const EdgeInsets.only(top: 200.0),
                   //       child: Image.asset('bg.jpeg'),
                   // )),
-                  Text("Product Info",
+                  Text("Login Portal",
                       style: TextStyle(
-                        decoration: TextDecoration.underline,
                         fontSize: 20.0,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                       )),
                   Padding(
                     padding: const EdgeInsets.only(top: 158.0),
-                    child: TextButton.icon(
-                  style: TextButton.styleFrom(
-                  textStyle: TextStyle(
-                    color: Colors.black12,
-                     ),
-                      backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(25.0)
-                      ),
-                  
-                        ),
-                        label: Text('Raise A Query'),
+                    child: new FlatButton(
+                        child: new Text('Logout'),
                         onPressed: () {
                           appAuth.logout().then((_) => Navigator.of(context)
-                              .pushReplacementNamed('/raiseQuery'));
-                        
-                        },
-                        icon: Icon(Icons.add_comment_outlined),
-                    )
+                              .pushReplacementNamed('/login'));
+                        }),
                   )
                 ],
               )
