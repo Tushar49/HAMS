@@ -1,3 +1,4 @@
+import 'package:flutter_application_1/Screens/itemInfo.dart';
 import 'package:flutter_application_1/pages/home.page.dart';
 import 'package:flutter_application_1/pages/login.page.dart';
 import 'package:flutter_application_1/services/auth.service.dart';
@@ -26,7 +27,7 @@ void main() async {
       // Set routes for using the Navigator.
       '/home': (BuildContext context) => new searchPage(),
       '/login': (BuildContext context) => new LoginPage(),
-      '/itemPage': (BuildContext context) => new HomePage(),
+      '/itemPage': (BuildContext context) => new itemInfo(),
     },
   ));
 }
