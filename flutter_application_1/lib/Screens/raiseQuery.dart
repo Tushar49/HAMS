@@ -36,6 +36,12 @@ class raiseQuery extends StatelessWidget {
           ],
         ),
         actions: [
+          new FlatButton(
+              child: new Text('Logout'),
+              onPressed: () {
+                appAuth.logout().then((_) =>
+                    Navigator.of(context).pushReplacementNamed('/login'));
+              }),
           contactButton(
             bText: 'Contact Us',
             icon: Icon(Icons.send_sharp),
@@ -58,37 +64,98 @@ class Body extends StatelessWidget {
     return Container(
         color: Colors.lightBlue[10],
         child: Center(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 100.0),
-            child: Column(children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  // Opacity(
-                  //     opacity: 0.4,
-                  //     child: Padding(
-                  //       padding: const EdgeInsets.only(top: 200.0),
-                  //       child: Image.asset('bg.jpeg'),
-                  // )),
-                  Text("Login Portal",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 158.0),
-                    child: new FlatButton(
-                        child: new Text('Logout'),
-                        onPressed: () {
-                          appAuth.logout().then((_) => Navigator.of(context)
-                              .pushReplacementNamed('/login'));
-                        }),
-                  )
-                ],
-              )
-            ]),
-          ),
+          child: Column(children: [
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                // Opacity(
+                //     opacity: 0.4,
+                //     child: Padding(
+                //       padding: const EdgeInsets.only(top: 200.0),
+                //       child: Image.asset('bg.jpeg'),
+                // )),
+                // Text("Login Portal",
+                //     style: TextStyle(
+                //       fontSize: 20.0,
+                //       color: Colors.black,
+                //       fontWeight: FontWeight.bold,
+                //     )),
+                // Padding(
+                //   padding: const EdgeInsets.only(top: 158.0),
+                //   child: new FlatButton(
+                //       child: new Text('Logout'),
+                //       onPressed: () {
+                //         appAuth.logout().then((_) => Navigator.of(context)
+                //             .pushReplacementNamed('/login'));
+                //       }),
+                // )
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 0.0, left: 300.0, right: 300.0),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      border: UnderlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                      borderRadius:const BorderRadius.all(const Radius.circular(10.0))
+                    ),
+                      labelText: 'Enter your Name',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 440.0, left: 300.0, right: 300.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                              const Radius.circular(10.0))),
+                      hintText: 'Enter your Query/Complaint',
+                    ),
+                  ),
+                ),Padding(
+                  padding: const EdgeInsets.only(
+                      top: 330.0, left: 300.0, right: 300.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                              const Radius.circular(10.0))),
+                      hintText: 'Enter the Serial Number',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 110.0, left: 300.0, right: 300.0),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      border: UnderlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: const BorderRadius.all(
+                              const Radius.circular(10.0))),
+                      labelText: 'Enter your Registration Number',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      top: 220.0, left: 300.0, right: 300.0),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      border: UnderlineInputBorder(),
+                      enabledBorder: OutlineInputBorder(
+                      borderRadius:const BorderRadius.all(const Radius.circular(10.0))
+                    ),
+                      labelText: 'Enter your Room Number (For example- G11)',
+                    ),
+                  ),
+                ),
+              ],
+            )
+          ]),
         ));
   }
 }

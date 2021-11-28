@@ -36,6 +36,12 @@ class itemInfo extends StatelessWidget {
           ],
         ),
         actions: [
+          new FlatButton(
+              child: new Text('Logout'),
+              onPressed: () {
+                appAuth.logout().then((_) =>
+                    Navigator.of(context).pushReplacementNamed('/login'));
+              }),
           contactButton(
             bText: 'Contact Us',
             icon: Icon(Icons.send_sharp),
@@ -78,27 +84,23 @@ class Body extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       )),
                   Padding(
-                    padding: const EdgeInsets.only(top: 158.0),
-                    child: TextButton.icon(
-                  style: TextButton.styleFrom(
-                  textStyle: TextStyle(
-                    color: Colors.black12,
-                     ),
-                      backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(25.0)
-                      ),
-                  
+                      padding: const EdgeInsets.only(top: 158.0),
+                      child: TextButton.icon(
+                        style: TextButton.styleFrom(
+                          textStyle: TextStyle(
+                            color: Colors.black12,
+                          ),
+                          backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0)),
                         ),
                         label: Text('Raise A Query'),
                         onPressed: () {
                           appAuth.logout().then((_) => Navigator.of(context)
                               .pushReplacementNamed('/raiseQuery'));
-                        
                         },
                         icon: Icon(Icons.add_comment_outlined),
-                    )
-                  )
+                      ))
                 ],
               )
             ]),
