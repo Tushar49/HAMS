@@ -3,33 +3,31 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/search.dart';
 import 'package:http/http.dart' as http;
 
-class AuthService {
-  // Login
-  Future<bool> login(String email, String password)async {
-    String url = 'https://hamsystem.000webhostapp.com/login.php';
+class searchService {
+  // Search
+  Future<bool> search(int serialCode)async {
+    String url = 'https://hamsystem.000webhostapp.com/productSearch.php';
     print(url);
   
-    print(email);
-    print(password);
+    print(serialCode);
 
     http.Response response;
      Map data = {
-      'username': email,
-      'password': password
+      'serialCode': serialCode,
     };
 
     try {
       response = await http.post(Uri.parse(url), body:data,);
-      print(response.body);
+      print(jsonDecode(response.body));
       if (response.statusCode != 200) {
         return Future.value(false);
     }
     } catch (e) {
       print(e);
     }
-  
     return Future.value(true);
   }    
   

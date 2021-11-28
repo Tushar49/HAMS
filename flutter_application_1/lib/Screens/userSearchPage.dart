@@ -57,6 +57,8 @@ class searchPage extends StatelessWidget {
   }
 }
 
+TextEditingController searchController = new TextEditingController();
+
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -75,12 +77,33 @@ class Body extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 15),
                     child: TextFormField(
+                      controller: searchController,
                       decoration: const InputDecoration(
                         border: UnderlineInputBorder(),
                         labelText: 'Enter the Serial Number',
+                        enabledBorder: OutlineInputBorder(
+                        borderRadius:const BorderRadius.all(const Radius.circular(10.0))
                       ),
+                      ),
+                      validator: (value) {
+                        if (value != null && value.isEmpty) {
+                          return "Retry";
+                        }
+                        return null;
+                      },
                     ),
                   ),
+                  FloatingActionButton(
+                    onPressed: () {
+                      appSearch
+                          .search(int.parse(searchController.text))
+                          .then((result) {
+                        if (result) {
+                          Navigator.of(context).pushReplacementNamed('/login');
+                        }
+                      });
+                    },
+                  )
                   // SearchBar(
                   //     hintText: "Enter the Serial Number",
                   //     hintStyle: TextStyle(
