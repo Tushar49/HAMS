@@ -99,7 +99,7 @@ class Body extends StatelessWidget {
                           .search(int.parse(searchController.text))
                           .then((result) {
                         if (result) {
-                          Navigator.of(context).pushReplacementNamed('/login');
+                          Navigator.of(context).pushReplacementNamed('/itemPage');
                         }
                       });
                     },
