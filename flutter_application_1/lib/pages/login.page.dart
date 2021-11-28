@@ -45,6 +45,9 @@ Widget build(BuildContext context) {
               if (result) {
                 Navigator.of(context).pushReplacementNamed('/home');
               }
+              else{
+                child: Text("Login error (please enter the correct password)");
+              }
             });
           },
         child: Text("Login",
