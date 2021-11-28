@@ -4,6 +4,12 @@ import 'package:flutter_application_1/widgets/contactButton.dart';
 
 import '../main.dart';
 
+TextEditingController queryNameController = new TextEditingController();
+TextEditingController queryRegNoController = new TextEditingController();
+TextEditingController queryRoomNoController = new TextEditingController();
+TextEditingController querySerialNoController = new TextEditingController();
+TextEditingController queryMsgController = new TextEditingController();
+
 class raiseQuery extends StatelessWidget {
   const raiseQuery({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
@@ -74,84 +80,100 @@ class Body extends StatelessWidget {
                 //       padding: const EdgeInsets.only(top: 200.0),
                 //       child: Image.asset('bg.jpeg'),
                 // )),
-                // Text("Login Portal",
-                //     style: TextStyle(
-                //       fontSize: 20.0,
-                //       color: Colors.black,
-                //       fontWeight: FontWeight.bold,
-                //     )),
-                // Padding(
-                //   padding: const EdgeInsets.only(top: 158.0),
-                //   child: new FlatButton(
-                //       child: new Text('Logout'),
-                //       onPressed: () {
-                //         appAuth.logout().then((_) => Navigator.of(context)
-                //             .pushReplacementNamed('/login'));
-                //       }),
-                // )
                 Padding(
                   padding: const EdgeInsets.only(
                       top: 0.0, left: 300.0, right: 300.0),
                   child: TextFormField(
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
-                      enabledBorder: OutlineInputBorder(
-                      borderRadius:const BorderRadius.all(const Radius.circular(10.0))
-                    ),
-                      labelText: 'Enter your Name',
-                    ),
-                  ),
+                      controller: queryNameController,
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: const BorderRadius.all(
+                                const Radius.circular(10.0))),
+                        labelText: 'Enter your Name',
+                      ),
+                      validator: (value) {
+                        if (value != null && value.isEmpty) {
+                          return "Retry";
+                        }
+                        return null;
+                      }),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
                       top: 440.0, left: 300.0, right: 300.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: const BorderRadius.all(
-                              const Radius.circular(10.0))),
-                      hintText: 'Enter your Query/Complaint',
-                    ),
-                  ),
-                ),Padding(
+                  child: TextFormField(
+                      controller: queryMsgController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: const BorderRadius.all(
+                                const Radius.circular(10.0))),
+                        hintText: 'Enter your Query/Complaint',
+                      ),
+                      validator: (value) {
+                        if (value != null && value.isEmpty) {
+                          return "Retry";
+                        }
+                        return null;
+                      }),
+                ),
+                Padding(
                   padding: const EdgeInsets.only(
                       top: 330.0, left: 300.0, right: 300.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: const BorderRadius.all(
-                              const Radius.circular(10.0))),
-                      hintText: 'Enter the Serial Number',
-                    ),
-                  ),
+                  child: TextFormField(
+                      controller: querySerialNoController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: const BorderRadius.all(
+                                const Radius.circular(10.0))),
+                        hintText: 'Enter the Serial Number',
+                      ),
+                      validator: (value) {
+                        if (value != null && value.isEmpty) {
+                          return "Retry";
+                        }
+                        return null;
+                      }),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
                       top: 110.0, left: 300.0, right: 300.0),
                   child: TextFormField(
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: const BorderRadius.all(
-                              const Radius.circular(10.0))),
-                      labelText: 'Enter your Registration Number',
-                    ),
-                  ),
+                      controller: queryRegNoController,
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: const BorderRadius.all(
+                                const Radius.circular(10.0))),
+                        labelText: 'Enter your Registration Number',
+                      ),
+                      validator: (value) {
+                        if (value != null && value.isEmpty) {
+                          return "Retry";
+                        }
+                        return null;
+                      }),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
                       top: 220.0, left: 300.0, right: 300.0),
                   child: TextFormField(
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
-                      enabledBorder: OutlineInputBorder(
-                      borderRadius:const BorderRadius.all(const Radius.circular(10.0))
-                    ),
-                      labelText: 'Enter your Room Number (For example- G11)',
-                    ),
-                  ),
+                      controller: queryRoomNoController,
+                      decoration: const InputDecoration(
+                        border: UnderlineInputBorder(),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: const BorderRadius.all(
+                                const Radius.circular(10.0))),
+                        labelText: 'Enter your Room Number (For example- G11)',
+                      ),
+                      validator: (value) {
+                        if (value != null && value.isEmpty) {
+                          return "Retry";
+                        }
+                        return null;
+                      }),
                 ),
               ],
             )

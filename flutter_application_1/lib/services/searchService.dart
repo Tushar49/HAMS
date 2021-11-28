@@ -16,7 +16,7 @@ class searchService {
 
     http.Response response;
      Map data = {
-      'ITEM_CODE': serialCode,
+      'SerialNumber': serialCode,
     };
 
     try {
