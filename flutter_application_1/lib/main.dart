@@ -4,12 +4,14 @@ import 'package:flutter_application_1/services/auth.service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/loginPortal.dart';
 import 'package:flutter_application_1/Screens/loginPortal2.dart';
+import 'package:flutter_application_1/services/searchService.dart';
 import 'Screens/homepage1.dart';
 
 import 'Screens/loginPortal.dart';
 import 'Screens/userSearchPage.dart';
 
 AuthService appAuth = new AuthService();
+searchService appSearch = new searchService();
 
 void main() async {
   // Set default home.
@@ -23,7 +25,8 @@ void main() async {
     routes: <String, WidgetBuilder>{
       // Set routes for using the Navigator.
       '/home': (BuildContext context) => new searchPage(),
-      '/login': (BuildContext context) => new LoginPage()
+      '/login': (BuildContext context) => new LoginPage(),
+      '/itemPage': (BuildContext context) => new HomePage(),
     },
   ));
 }
