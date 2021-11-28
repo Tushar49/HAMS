@@ -25,7 +25,8 @@ void main() async {
     routes: <String, WidgetBuilder>{
       // Set routes for using the Navigator.
       '/home': (BuildContext context) => new searchPage(),
-      '/login': (BuildContext context) => new LoginPage()
+      '/login': (BuildContext context) => new LoginPage(),
+      '/itemPage': (BuildContext context) => new HomePage(),
     },
   ));
 }
