@@ -76,33 +76,41 @@ class Body extends StatelessWidget {
                   Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 15),
-                    child: TextFormField(
-                      controller: searchController,
-                      decoration: const InputDecoration(
-                        border: UnderlineInputBorder(),
-                        labelText: 'Enter the Serial Number',
-                        enabledBorder: OutlineInputBorder(
-                        borderRadius:const BorderRadius.all(const Radius.circular(10.0))
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 200.0, left: 50.0),
+                      child: TextFormField(
+                        controller: searchController,
+                        decoration: const InputDecoration(
+                          border: UnderlineInputBorder(),
+                          labelText: 'Enter the Serial Number',
+                          enabledBorder: OutlineInputBorder(
+                          borderRadius:const BorderRadius.all(const Radius.circular(10.0))
+                        ),
+                        ),
+                        validator: (value) {
+                          if (value != null && value.isEmpty) {
+                            return "Retry";
+                          }
+                          return null;
+                        },
                       ),
-                      ),
-                      validator: (value) {
-                        if (value != null && value.isEmpty) {
-                          return "Retry";
-                        }
-                        return null;
-                      },
                     ),
                   ),
-                  FloatingActionButton(
-                    onPressed: () {
-                      appSearch
-                          .search(int.parse(searchController.text))
-                          .then((result) {
-                        if (result) {
-                          Navigator.of(context).pushReplacementNamed('/itemPage');
-                        }
-                      });
-                    },
+                  Padding(
+                    padding: const EdgeInsets.only(left: 1300.0),
+                    child: FloatingActionButton(
+                      child: Icon(Icons.search),
+                      backgroundColor: Colors.deepOrange[900],
+                      onPressed: () {
+                        appSearch
+                            .search(int.parse(searchController.text))
+                            .then((result) {
+                          if (result) {
+                            Navigator.of(context).pushReplacementNamed('/itemPage');
+                          }
+                        });
+                      },
+                    ),
                   )
                   // SearchBar(
                   //     hintText: "Enter the Serial Number",

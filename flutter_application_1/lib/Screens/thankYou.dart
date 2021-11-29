@@ -60,39 +60,12 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.lightBlue[10],
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 100.0),
-            child: Column(children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  // Opacity(
-                  //     opacity: 0.4,
-                  //     child: Padding(
-                  //       padding: const EdgeInsets.only(top: 200.0),
-                  //       child: Image.asset('bg.jpeg'),
-                  // )),
-                  Text("Login Portal",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 158.0),
-                    child: new FlatButton(
-                        child: new Text('Logout'),
-                        onPressed: () {
-                          appAuth.logout().then((_) => Navigator.of(context)
-                              .pushReplacementNamed('/login'));
-                        }),
-                  )
-                ],
-              )
-            ]),
-          ),
-        ));
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("TYBG.jpg"), fit: BoxFit.fill)),
+          child: TextField(
+            decoration: InputDecoration(fillColor: Colors.amber, filled: true),
+          ));
   }
 }
