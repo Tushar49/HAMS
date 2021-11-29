@@ -15,14 +15,13 @@ class searchService {
     print(serialCode);
 
     http.Response response;
-     Map data = {
-      'SerialNumber': serialCode,
+     Map<String, String> data = {
+      'SerialNumber': serialCode.toString(),
     };
-
     try {
       response = await http.post(Uri.parse(url), body:data,);
       print(jsonDecode(response.body));
-      if (response.statusCode != 200) {
+       if (response.statusCode != 200) {
         return Future.value(false);
     }
     } catch (e) {
