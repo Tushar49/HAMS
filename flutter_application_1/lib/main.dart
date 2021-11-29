@@ -6,6 +6,7 @@
 // import 'package:flutter_application_1/Screens/loginPortal2.dart';
 import 'package:flutter_application_1/Screens/itemInfo.dart';
 import 'package:flutter_application_1/Screens/raiseQuery.dart';
+import 'package:flutter_application_1/Screens/thankYou.dart';
 import 'package:flutter_application_1/pages/login.page.dart';
 import 'package:flutter_application_1/services/auth.service.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ void main() async {
       '/login': (BuildContext context) => new LoginPage(),
       '/itemPage': (BuildContext context) => new itemInfo(),
       '/raiseQuery': (BuildContext context) => new raiseQuery(),
+      '/thankYou': (BuildContext context) => new thankYouPage(),
     },
   ));
 }
