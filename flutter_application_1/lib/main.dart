@@ -10,11 +10,13 @@ import 'package:flutter_application_1/Screens/thankYou.dart';
 import 'package:flutter_application_1/pages/login.page.dart';
 import 'package:flutter_application_1/services/auth.service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/services/raiseQueryService.dart';
 import 'package:flutter_application_1/services/searchService.dart';
 import 'Screens/userSearchPage.dart';
 
 AuthService appAuth = new AuthService();
 searchService appSearch = new searchService();
+RaiseQueryService appRaise=  new RaiseQueryService();
 
 void main() async {
   // Set default home.

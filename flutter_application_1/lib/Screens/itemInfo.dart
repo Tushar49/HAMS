@@ -6,7 +6,6 @@ import 'package:flutter_application_1/model/items.dart';
 import '../main.dart';
 
 class ItemInfo extends StatelessWidget {
-
   // static const String route = '/itemPage';
 
   // final Items args;
@@ -16,6 +15,8 @@ class ItemInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final Items args = ModalRoute.of(context)!.settings.arguments as Items;
     print("args here - " + args.toString());
+    // if(args.last_service_date==null)
+    // args.last_service_date = "NULL";
 
     return Scaffold(
       appBar: AppBar(
@@ -61,8 +62,7 @@ class ItemInfo extends StatelessWidget {
       ),
       body: Stack(children: [
         Body(args),
-      ])
-      ,
+      ]),
     );
   }
 }
@@ -76,77 +76,84 @@ class Body extends StatelessWidget {
     return Container(
         color: Colors.lightBlue[100],
         child: Center(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Column(children: [
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Text("Product Information of item\n",
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontSize: 20.0,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      )),
-                ],
-              ),
-
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Text("Serial Number - " + args.serial_number, 
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontSize: 16.0,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      )),
-                      
-                
-                ],
-              ),
-
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Text("Type - " + args.type, 
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontSize: 16.0,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      )),
-                      
-                  
-                ],
-                
-              ),
-              Padding(
-                      padding: const EdgeInsets.only(top: 158.0),
-                      child: TextButton.icon(
-                        style: TextButton.styleFrom(
-                          textStyle: TextStyle(
-                            color: Colors.black12,
-                          ),
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0)),
-                        ),
-                        label: Text('Raise A Query'),
-                        onPressed: () {
-                          appAuth.logout().then((_) => Navigator.of(context)
-                              .pushReplacementNamed('/raiseQuery'));
-                        },
-                        icon: Icon(Icons.add_comment_outlined),
-                      ))
-
-
-             
-
-              
-            ]),
-          ),
-        ));
+            child: Padding(
+          padding: const EdgeInsets.only(top: 50.0),
+          child: Column(children: [
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Text("Product Information of item\n",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      fontSize: 40.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    )),
+              ],
+            ),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Text("Serial Number - " + args.serial_number,
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    )),
+              ],
+            ),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Text("Type - " + args.type,
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    )),
+              ],
+            ),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Text("Room Number - " + args.block + " - " + args.room_number,
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    )),
+              ],
+            ),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Text("Last Service Date - " + args.last_service_date,
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    )),
+              ],
+            ),
+            Padding(
+                padding: const EdgeInsets.only(top: 120.0),
+                child: TextButton.icon(
+                  style: TextButton.styleFrom(
+                    textStyle: TextStyle(
+                      color: Colors.black12,
+                    ),
+                    backgroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25.0)),
+                  ),
+                  label: Text('Raise A Query'),
+                  onPressed: () {
+                    appAuth.logout().then((_) => Navigator.of(context)
+                        .pushReplacementNamed('/raiseQuery'));
+                  },
+                  icon: Icon(Icons.add_comment_outlined),
+                ))
+          ]),
+        )));
   }
 }

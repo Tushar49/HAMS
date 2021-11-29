@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/widgets/contactButton.dart';
+import 'package:flutter_application_1/services/raiseQueryService.dart';
 
 import '../main.dart';
 
@@ -175,6 +176,23 @@ class Body extends StatelessWidget {
                         return null;
                       }),
                 ),
+                Padding(
+                    padding: const EdgeInsets.only(top: 600.0),
+                    child: FloatingActionButton(
+                      child: Icon(Icons.event_note_rounded),
+                      backgroundColor: Colors.deepOrange[900],
+                      onPressed: () {
+                        appRaise
+                            .ProceedQuery(queryNameController.text, queryRoomNoController.text, queryRegNoController.text,
+                            queryRoomNoController.text, queryMsgController.text)
+                            .then((result) {
+                          if (result==true) {
+                            Navigator.of(context).pushReplacementNamed('/thankYou');
+                          }
+                        });
+                      },
+                    ),
+                  )
               ],
             )
           ]),

@@ -28,7 +28,8 @@ class searchService {
       print(values['Last Service Date']);
       print(values['Block']);
       print(values['Room Number']);
-
+      if(values['Last Service Date']==null)
+      values['Last Service Date'] ="NULL";
    var it = Items(
     values['Serial Number'], 
     values['Type'], 

@@ -1,9 +1,9 @@
 class Items{
   final String serial_number;
   final String type;
-  final String? last_service_date;
-  final String?  block;
-  final String? room_number;
+  String last_service_date;
+  final String  block;
+  final String room_number;
   Items(
     this.serial_number,
     this.type,  
