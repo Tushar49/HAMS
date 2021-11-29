@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class RaiseQueryService {
   // Login
-  Future<bool> ProceedQuery(String name, String room, String regNo, String SerialNo, String message)async {
+  Future<bool> ProceedQuery(String name, String room, String regNo, String serialNo, String message)async {
     String url = 'https://hamsystem.000webhostapp.com/raiseQuery.php';
    
 
@@ -15,7 +15,7 @@ class RaiseQueryService {
      Map data = {
       'StudentName': name,
       'RoomNo': room,
-      'SerialNo': SerialNo,
+      'SerialNo': serialNo,
       'Message': message,
       'regNo': regNo,
     };
@@ -25,15 +25,15 @@ class RaiseQueryService {
       print(response.body);
       
     Map<String, dynamic> values = jsonDecode(response.body);
-    print("values= ");
-    print(values);  
-      
-           print(values['error']);
-           if( values['error'])
-           {
-             return Future.value(false);
-           }
-           else{return Future.value(true);}
+    if(values["error"])
+      {
+        print("here");
+        return Future.value(false);
+      }
+    
+      else{
+        print("here1");
+        return Future.value(true);}
     } catch (e) {
       print(e);
     }

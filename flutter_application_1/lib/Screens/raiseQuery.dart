@@ -182,9 +182,10 @@ class Body extends StatelessWidget {
                       child: Icon(Icons.event_note_rounded),
                       backgroundColor: Colors.deepOrange[900],
                       onPressed: () {
+                        print("query - "+  queryRegNoController.text + " " + querySerialNoController.text);
                         appRaise
                             .ProceedQuery(queryNameController.text, queryRoomNoController.text, queryRegNoController.text,
-                            queryRoomNoController.text, queryMsgController.text)
+                            querySerialNoController.text, queryMsgController.text)
                             .then((result) {
                           if (result==true) {
                             Navigator.of(context).pushReplacementNamed('/thankYou');
