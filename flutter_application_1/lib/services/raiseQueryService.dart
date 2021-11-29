@@ -27,12 +27,9 @@ class RaiseQueryService {
     Map<String, dynamic> values = jsonDecode(response.body);
     if(values["error"])
       {
-        print("here");
         return Future.value(false);
-      }
-    
+      }    
       else{
-        print("here1");
         return Future.value(true);}
     } catch (e) {
       print(e);
