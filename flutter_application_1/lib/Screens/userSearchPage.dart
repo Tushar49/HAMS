@@ -105,8 +105,8 @@ class Body extends StatelessWidget {
                         appSearch
                             .search(int.parse(searchController.text))
                             .then((result) {
-                          if (result) {
-                            Navigator.of(context).pushReplacementNamed('/itemPage');
+                          if (result.serial_number != "") {
+                            Navigator.of(context).pushReplacementNamed('/itemPage', arguments: result);
                           }
                         });
                       },

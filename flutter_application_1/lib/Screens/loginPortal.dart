@@ -5,6 +5,7 @@ import 'package:flutter_application_1/widgets/contactButton.dart';
 import '../main.dart';
 
 class loginPage extends StatelessWidget {
+
   const loginPage({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
     return Scaffold(

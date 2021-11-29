@@ -29,7 +29,7 @@ void main() async {
       // Set routes for using the Navigator.
       '/home': (BuildContext context) => new searchPage(),
       '/login': (BuildContext context) => new LoginPage(),
-      '/itemPage': (BuildContext context) => new itemInfo(),
+      '/itemPage': (BuildContext context) => new ItemInfo(),
       '/raiseQuery': (BuildContext context) => new raiseQuery(),
       '/thankYou': (BuildContext context) => new thankYouPage(),
     },

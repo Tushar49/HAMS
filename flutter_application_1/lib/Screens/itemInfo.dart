@@ -2,11 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_application_1/widgets/contactButton.dart';
 
+import 'package:flutter_application_1/model/items.dart';
 import '../main.dart';
 
-class itemInfo extends StatelessWidget {
-  const itemInfo({Key? key}) : super(key: key);
+class ItemInfo extends StatelessWidget {
+
+  // static const String route = '/itemPage';
+
+  // final Items args;
+
+  ItemInfo();
+
   Widget build(BuildContext context) {
+    final Items args = ModalRoute.of(context)!.settings.arguments as Items;
+    print("args here - " + args.toString());
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
@@ -50,14 +60,16 @@ class itemInfo extends StatelessWidget {
         ],
       ),
       body: Stack(children: [
-        Body(),
-      ]),
+        Body(args),
+      ])
+      ,
     );
   }
 }
 
 class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+  final Items args;
+  Body(this.args);
 
   @override
   Widget build(BuildContext context) {
@@ -70,20 +82,47 @@ class Body extends StatelessWidget {
               Stack(
                 alignment: Alignment.center,
                 children: [
-                  // Opacity(
-                  //     opacity: 0.4,
-                  //     child: Padding(
-                  //       padding: const EdgeInsets.only(top: 200.0),
-                  //       child: Image.asset('bg.jpeg'),
-                  // )),
-                  Text("Product Info",
+                  Text("Product Information of item\n",
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                         fontSize: 20.0,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                       )),
-                  Padding(
+                ],
+              ),
+
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Text("Serial Number - " + args.serial_number, 
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontSize: 16.0,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      )),
+                      
+                
+                ],
+              ),
+
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Text("Type - " + args.type, 
+                      style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        fontSize: 16.0,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      )),
+                      
+                  
+                ],
+                
+              ),
+              Padding(
                       padding: const EdgeInsets.only(top: 158.0),
                       child: TextButton.icon(
                         style: TextButton.styleFrom(
@@ -101,8 +140,11 @@ class Body extends StatelessWidget {
                         },
                         icon: Icon(Icons.add_comment_outlined),
                       ))
-                ],
-              )
+
+
+             
+
+              
             ]),
           ),
         ));
