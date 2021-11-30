@@ -46,7 +46,9 @@ class searchPage extends StatelessWidget {
           contactButton(
             bText: 'Contact Us',
             icon: Icon(Icons.send_sharp),
-            onPressed: () {},
+            onPressed: () {
+              showContact();
+            },
           )
         ],
       ),
@@ -55,6 +57,9 @@ class searchPage extends StatelessWidget {
       ]),
     );
   }
+}
+
+void showContact() {
 }
 
 TextEditingController searchController = new TextEditingController();
