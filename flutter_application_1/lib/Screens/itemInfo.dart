@@ -82,7 +82,7 @@ class Body extends StatelessWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-                Text("Product Information of item\n",
+                Text("Asset Information\n",
                     style: TextStyle(
                       decoration: TextDecoration.underline,
                       fontSize: 40.0,
